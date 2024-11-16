@@ -10,5 +10,5 @@ public enum Command {
     ChangeWalletStatus,
     Deposit,
     Transfer,
-    Exit;
+    Exit
 }

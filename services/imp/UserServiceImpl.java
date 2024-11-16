@@ -16,8 +16,8 @@ import static common.SystemErrors.*;
 // so you can determine which is the currently logged in user.
 public class UserServiceImpl implements UserService {
 
-    private UserSessionManager sessionManager;
-    private UserRepository userRepository;
+    private final UserSessionManager sessionManager;
+    private final UserRepository userRepository;
 
     public UserServiceImpl(UserSessionManager sessionManager) {
         this.sessionManager = sessionManager;

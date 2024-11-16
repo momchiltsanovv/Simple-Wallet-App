@@ -12,10 +12,10 @@ import java.util.UUID;
 
 public class Engine implements Runnable {
 
-    private Scanner scanner;
+    private final Scanner scanner;
     private UserSessionManager sessionManager;
-    private UserService userService;
-    private WalletService walletService;
+    private final UserService userService;
+    private final WalletService walletService;
 
     public Engine() {
         this.scanner = new Scanner(System.in);

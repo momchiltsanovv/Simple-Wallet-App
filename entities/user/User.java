@@ -4,8 +4,8 @@ import java.util.UUID;
 
 public class User {
 
-    // Уникалност на потребителите
-    private UUID id;
+
+    private final UUID id;
     private String username;
     private String password;
 

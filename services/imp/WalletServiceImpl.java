@@ -20,8 +20,8 @@ import static common.SystemErrors.*;
 // so you can determine which is the currently logged in user.
 public class WalletServiceImpl implements WalletService {
 
-    private UserSessionManager sessionManager;
-    private WalletRepository walletRepository;
+    private final UserSessionManager sessionManager;
+    private final WalletRepository walletRepository;
 
     public WalletServiceImpl(UserSessionManager sessionManager) {
         this.sessionManager = sessionManager;

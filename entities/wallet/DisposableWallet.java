@@ -26,11 +26,8 @@ public class DisposableWallet extends Wallet {
 
     @Override
     public String toString() {
-
-        StringBuilder stringBuilder = new StringBuilder(super.toString());
-        stringBuilder.append(System.lineSeparator());
-        stringBuilder.append("Max withdrawals: ").append(2).append(System.lineSeparator());
-        stringBuilder.append("Current withdrawals: ").append(withdrawAttempts);
-        return stringBuilder.toString();
+        return super.toString() + System.lineSeparator() +
+                "Max withdrawals: " + 2 + System.lineSeparator() +
+                "Current withdrawals: " + withdrawAttempts;
     }
 }

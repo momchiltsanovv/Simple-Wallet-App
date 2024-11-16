@@ -9,7 +9,7 @@ import static common.SystemErrors.SAVINGS_PERIOD_NOT_CONCLUDED_YET;
 
 public class SavingsWallet extends Wallet {
 
-    private LocalDateTime savingPeriodEnd;
+    private final LocalDateTime savingPeriodEnd;
 
     public SavingsWallet(UUID ownerId, String ownerUsername, Currency currency) {
         super(ownerId, ownerUsername, currency, 10.00);
@@ -19,7 +19,7 @@ public class SavingsWallet extends Wallet {
     @Override
     public void withdraw(double amount) {
 
-        //LocalDateTime.now() - сегашно време (дата и час)
+
         if (LocalDateTime.now().isBefore(savingPeriodEnd)) {
             long leftSecond = Duration.between(LocalDateTime.now(), savingPeriodEnd).toSeconds();
             throw new IllegalStateException(SAVINGS_PERIOD_NOT_CONCLUDED_YET.formatted(leftSecond));

@@ -8,10 +8,10 @@ import static common.SystemErrors.NO_OPERATIONS_ALLOWED_FOR_NON_ACTIVE_WALLET;
 
 public abstract class Wallet {
 
-    private UUID id;
-    private UUID ownerId;
-    private String ownerUsername;
-    private Currency currency;
+    private final UUID id;
+    private final UUID ownerId;
+    private final String ownerUsername;
+    private final Currency currency;
     private double balance;
     private WalletStatus status;
 
@@ -79,12 +79,10 @@ public abstract class Wallet {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Wallet [%s][%s]:".formatted(id, this.getClass().getSimpleName())).append(System.lineSeparator());
-        stringBuilder.append("Owner: ").append(ownerUsername).append(System.lineSeparator());
-        stringBuilder.append("Currency: ").append(currency).append(System.lineSeparator());
-        stringBuilder.append("Balance: ").append(balance).append(System.lineSeparator());
-        stringBuilder.append("Status: ").append(status);
-        return stringBuilder.toString();
+        return "Wallet [%s][%s]:".formatted(id, this.getClass().getSimpleName()) + System.lineSeparator() +
+                "Owner: " + ownerUsername + System.lineSeparator() +
+                "Currency: " + currency + System.lineSeparator() +
+                "Balance: " + balance + System.lineSeparator() +
+                "Status: " + status;
     }
 }

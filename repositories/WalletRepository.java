@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class WalletRepository implements Repository<Wallet, UUID> {
 
-    private Map<UUID, Wallet> walletStorage = new HashMap<>();
+    private final Map<UUID, Wallet> walletStorage = new HashMap<>();
 
     @Override
     public void save(UUID id, Wallet wallet) {
