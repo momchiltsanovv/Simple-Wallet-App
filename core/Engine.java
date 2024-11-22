@@ -2,8 +2,8 @@ package core;
 
 import services.WalletService;
 import services.UserService;
-import services.imp.UserServiceImpl;
-import services.imp.WalletServiceImpl;
+import services.impl.UserServiceImpl;
+import services.impl.WalletServiceImpl;
 
 import java.util.Arrays;
 import java.util.Currency;

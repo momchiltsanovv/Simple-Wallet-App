@@ -1,4 +1,4 @@
-package services.imp;
+package services.impl;
 
 import core.UserSessionManager;
 import entities.user.User;
@@ -10,10 +10,7 @@ import java.util.List;
 import static common.LogMessages.*;
 import static common.SystemErrors.*;
 
-// TODO:
-// 1. Implement all methods
-// 2. Make sure this service implementation has dependency a SessionManager
-// so you can determine which is the currently logged in user.
+
 public class UserServiceImpl implements UserService {
 
     private final UserSessionManager sessionManager;
