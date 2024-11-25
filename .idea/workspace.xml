@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4f0f664a-bc2d-4380-a2d8-8d00c774d8a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/SessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/impl/WalletServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/impl/WalletServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,26 +36,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/momchiltsanov/Developer/IntelliJ/WalletApp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/momchiltsanov/Developer/IntelliJ/WalletApp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -80,7 +75,10 @@
       <workItem from="1731783072724" duration="805000" />
       <workItem from="1731942096725" duration="5000" />
       <workItem from="1732300586767" duration="1112000" />
-      <workItem from="1732301707809" duration="1869000" />
+      <workItem from="1732301707809" duration="2137000" />
+      <workItem from="1732303856926" duration="18000" />
+      <workItem from="1732374326144" duration="275000" />
+      <workItem from="1732377344566" duration="17000" />
     </task>
     <servers />
   </component>
