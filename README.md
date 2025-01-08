@@ -1,8 +1,7 @@
-# Simple Wallet App
+# Wallet App
 
 ## Overview
-The Simple Wallet App is a user-friendly application designed for managing digital transactions. It allows users to send and receive money while keeping track of their financial activities efficiently.
-
+The Simple Revolut-like Wallet App is a user-friendly console application designed for managing digital transactions. It allows users to send and receive money while efficiently keeping track of their financial activities.
 ## Features
 -  User registration and authentication
 -  Send and receive money
