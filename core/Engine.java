@@ -1,7 +1,7 @@
 package core;
 
-import services.WalletService;
 import services.UserService;
+import services.WalletService;
 import services.impl.UserServiceImpl;
 import services.impl.WalletServiceImpl;
 
@@ -13,13 +13,12 @@ import java.util.UUID;
 public class Engine implements Runnable {
 
     private final Scanner scanner;
-    private UserSessionManager sessionManager;
     private final UserService userService;
     private final WalletService walletService;
 
     public Engine() {
         this.scanner = new Scanner(System.in);
-        this.sessionManager = new UserSessionManager();
+        UserSessionManager sessionManager = new UserSessionManager();
         this.userService = new UserServiceImpl(sessionManager);
         this.walletService = new WalletServiceImpl(sessionManager);
     }
@@ -54,35 +53,17 @@ public class Engine implements Runnable {
         String[] data = Arrays.stream(tokens).skip(1).toArray(String[]::new);
 
 
-        switch (command) {
-            case Login:
-                result = userService.login(data[0], data[1]);
-                break;
-            case Register:
-                result = userService.register(data[0], data[1]);
-                break;
-            case Logout:
-                result = userService.logout();
-                break;
-            case NewWallet:
-                result = walletService.createNewWallet(Currency.getInstance(data[0]), data[1]);
-                break;
-            case MyWallets:
-                result = walletService.getMyWallets();
-                break;
-            case ChangeWalletStatus:
-                result = walletService.changeWalletStatus(UUID.fromString(data[0]), data[1]);
-                break;
-            case Deposit:
-                result = walletService.deposit(UUID.fromString(data[0]), Double.parseDouble(data[1]));
-                break;
-            case Transfer:
-                result = walletService.transfer(UUID.fromString(data[0]), data[1], Double.parseDouble(data[2]));
-                break;
-            case Exit:
-                result = Command.Exit.name();
-                break;
-        }
+        result = switch (command) {
+            case Login -> userService.login(data[0], data[1]);
+            case Register -> userService.register(data[0], data[1]);
+            case Logout -> userService.logout();
+            case NewWallet -> walletService.createNewWallet(Currency.getInstance(data[0]), data[1]);
+            case MyWallets -> walletService.getMyWallets();
+            case ChangeWalletStatus -> walletService.changeWalletStatus(UUID.fromString(data[0]), data[1]);
+            case Deposit -> walletService.deposit(UUID.fromString(data[0]), Double.parseDouble(data[1]));
+            case Transfer -> walletService.transfer(UUID.fromString(data[0]), data[1], Double.parseDouble(data[2]));
+            case Exit -> Command.Exit.name();
+        };
         return result;
     }
 }
