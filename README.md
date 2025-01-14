@@ -1,4 +1,4 @@
-# Wallet App
+# Revolut-Like Wallet App
 
 ## Overview
 The Simple Revolut-like Wallet App is a user-friendly console application designed for managing digital transactions. It allows users to send and receive money while efficiently keeping track of their financial activities.
