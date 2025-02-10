@@ -23,6 +23,8 @@ public class WalletRepository implements Repository<Wallet, UUID> {
 
     @Override
     public List<Wallet> getAll() {
-        return walletStorage.values().stream().toList();
+        return walletStorage.values()
+                            .stream()
+                            .toList();
     }
 }

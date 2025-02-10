@@ -35,17 +35,23 @@ public class WalletServiceImpl implements WalletService {
         //Standard, Disposable, Savings
         Wallet wallet;
         switch (walletType) {
-            case "Standard" -> wallet = new StandardWallet(activeUser.getId(), activeUser.getUsername(), currency);
-            case "Disposable" -> wallet = new DisposableWallet(activeUser.getId(), activeUser.getUsername(), currency);
-            case "Savings" -> wallet = new SavingsWallet(activeUser.getId(), activeUser.getUsername(), currency);
+            case "Standard" -> wallet = new StandardWallet(activeUser.getId(),
+                                                           activeUser.getUsername(),
+                                                           currency);
+            case "Disposable" -> wallet = new DisposableWallet(activeUser.getId(),
+                                                               activeUser.getUsername(),
+                                                               currency);
+            case "Savings" -> wallet = new SavingsWallet(activeUser.getId(),
+                                                         activeUser.getUsername(),
+                                                         currency);
             default -> throw new IllegalArgumentException(INCORRECT_WALLET_TYPE);
         }
 
         if (walletType.equals("Standard")) {
             List<Wallet> activeUserWallets = walletRepository.getAll()
-                    .stream()
-                    .filter(w -> w.getOwnerId().equals(activeUser.getId()))
-                    .toList();
+                                                             .stream()
+                                                             .filter(w -> w.getOwnerId().equals(activeUser.getId()))
+                                                             .toList();
             for (Wallet currentWallet : activeUserWallets) {
                 if (currentWallet instanceof StandardWallet) {
                     throw new IllegalStateException(STANDARD_WALLET_COUNT_LIMIT_REACHED);
@@ -65,14 +71,16 @@ public class WalletServiceImpl implements WalletService {
         User activeUser = sessionManager.getActiveSession();
 
         List<Wallet> userWallets = walletRepository.getAll().stream()
-                .filter(wallet -> wallet.getOwnerId().equals(activeUser.getId()))
-                .toList();
+                                                   .filter(wallet -> wallet.getOwnerId().equals(activeUser.getId()))
+                                                   .toList();
 
-        if (userWallets.isEmpty()){
+        if (userWallets.isEmpty()) {
             return ZERO_WALLETS;
         }
 
-        return userWallets.stream().map(Wallet::toString).collect(Collectors.joining(System.lineSeparator()));
+        return userWallets.stream()
+                          .map(Wallet::toString)
+                          .collect(Collectors.joining(System.lineSeparator()));
     }
 
     @Override
@@ -90,9 +98,9 @@ public class WalletServiceImpl implements WalletService {
 
         Wallet senderWallet = getCurrentlyActiveUserWallet(walletId);
         Wallet receiverWallet = walletRepository.getAll().stream()
-                .filter(w -> w.getOwnerUsername().equals(receiverUsername) && w instanceof StandardWallet)
-                .findFirst()
-                .orElseThrow(() -> new IllegalStateException(NO_WALLET_FOUND_FOR_RECEIVER.formatted(receiverUsername)));
+                                                .filter(w -> w.getOwnerUsername().equals(receiverUsername) && w instanceof StandardWallet)
+                                                .findFirst()
+                                                .orElseThrow(() -> new IllegalStateException(NO_WALLET_FOUND_FOR_RECEIVER.formatted(receiverUsername)));
 
         boolean isSenderWalletActive = senderWallet.getStatus() == WalletStatus.ACTIVE;
         boolean isReceiverWalletActive = receiverWallet.getStatus() == WalletStatus.ACTIVE;
@@ -131,9 +139,11 @@ public class WalletServiceImpl implements WalletService {
         User activeUser = sessionManager.getActiveSession();
 
         return walletRepository.getAll().stream()
-                .filter(w -> w.getId().equals(walletId) && w.getOwnerId().equals(activeUser.getId()))
-                .findFirst()
-                .orElseThrow(() -> new IllegalStateException(WALLET_NOT_ASSOCIATED_WITH_THIS_USER.formatted(activeUser.getUsername())));
+                               .filter(w -> w.getId().equals(walletId)
+                                       && w.getOwnerId().equals(activeUser.getId())
+                                      )
+                               .findFirst()
+                               .orElseThrow(() -> new IllegalStateException(WALLET_NOT_ASSOCIATED_WITH_THIS_USER.formatted(activeUser.getUsername())));
     }
 
     private void validActiveSession() {

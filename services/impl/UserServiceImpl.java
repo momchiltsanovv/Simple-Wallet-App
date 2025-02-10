@@ -29,10 +29,13 @@ public class UserServiceImpl implements UserService {
             throw new IllegalStateException(USER_ALREADY_LOGGED_IN.formatted(activeUser.getUsername()));
         }
 
-        User user = userRepository.getAll().stream()
-                .filter(u -> u.getUsername().equals(username) && u.getPassword().equals(password))
-                .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException(INCORRECT_LOGIN_CREDENTIALS));
+        User user = userRepository.getAll()
+                                  .stream()
+                                  .filter(u -> u.getUsername().equals(username)
+                                          && u.getPassword().equals(password)
+                                         )
+                                  .findFirst()
+                                  .orElseThrow(() -> new IllegalArgumentException(INCORRECT_LOGIN_CREDENTIALS));
 
         sessionManager.setActiveSession(user);
 
@@ -42,8 +45,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public String register(String username, String password) {
 
-        boolean isUsernameAlreadyExist = userRepository.getAll().stream()
-                .anyMatch(u -> u.getUsername().equals(username));
+        boolean isUsernameAlreadyExist = userRepository.getAll()
+                                                       .stream()
+                                                       .anyMatch(u -> u.getUsername().equals(username));
         if (isUsernameAlreadyExist) {
             throw new IllegalArgumentException(SUCH_USERNAME_ALREADY_EXIST.formatted(username));
         }

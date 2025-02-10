@@ -31,9 +31,14 @@ public class SavingsWallet extends Wallet {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder(super.toString());
+
         long seconds = Duration.between(LocalDateTime.now(), savingPeriodEnd).toSeconds();
         stringBuilder.append(System.lineSeparator());
-        stringBuilder.append("Saving period ends within: ").append(Math.max(0, seconds)).append(" seconds");
+
+        stringBuilder.append("Saving period ends within: ")
+                     .append(Math.max(0, seconds))
+                     .append(" seconds");
+
         return stringBuilder.toString();
     }
 }
