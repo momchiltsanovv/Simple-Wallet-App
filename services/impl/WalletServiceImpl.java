@@ -113,7 +113,10 @@ public class WalletServiceImpl implements WalletService {
         senderWallet.withdraw(amount);
         receiverWallet.deposit(amount);
 
-        return SUCCESSFUL_FUNDS_TRANSFER.formatted(senderWallet.getOwnerUsername(), amount, receiverUsername, senderWallet.getBalance());
+        return SUCCESSFUL_FUNDS_TRANSFER.formatted(senderWallet.getOwnerUsername(),
+                                                   amount,
+                                                   receiverUsername,
+                                                   senderWallet.getBalance());
     }
 
     @Override

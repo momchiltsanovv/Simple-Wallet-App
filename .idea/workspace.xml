@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f0f664a-bc2d-4380-a2d8-8d00c774d8a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/wallet/StandardWallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/entities/wallet/StandardWallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/impl/WalletServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/impl/WalletServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +36,7 @@
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
@@ -59,8 +62,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -86,6 +89,7 @@
       <workItem from="1736758560769" duration="427000" />
       <workItem from="1736762289026" duration="94000" />
       <workItem from="1736782379284" duration="125000" />
+      <workItem from="1739189839734" duration="3566000" />
     </task>
     <servers />
   </component>

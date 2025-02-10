@@ -48,9 +48,11 @@ public class Engine implements Runnable {
         String result = null;
 
         String[] tokens = scanner.nextLine().split("\\s+");
-
         Command command = Command.valueOf(tokens[0]);
-        String[] data = Arrays.stream(tokens).skip(1).toArray(String[]::new);
+
+        String[] data = Arrays.stream(tokens)
+                              .skip(1)
+                              .toArray(String[]::new);
 
 
         result = switch (command) {

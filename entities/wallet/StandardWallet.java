@@ -7,6 +7,5 @@ public class StandardWallet extends Wallet {
 
     public StandardWallet(UUID ownerId, String ownerUsername, Currency currency) {
         super(ownerId, ownerUsername, currency, 20.00);
-        
     }
 }
